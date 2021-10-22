@@ -1,0 +1,41 @@
+
+<!-- <div class="table">
+	<mat-nav-list #user class='user-list'>
+		<div class="list-item">
+			<h3 class="column">Login</h3>
+			<mat-divider [vertical]="true" class="devider"></mat-divider>
+			<h3 class="column">Name</h3>
+			<mat-divider [vertical]="true" class="devider"></mat-divider>
+			<h3 class="column">Last Name</h3>
+		</div>
+		<a [routerLink]="[user.id]" *ngFor="let user of users" class='list-item'>
+			<h3 class="column">{{user.login}}</h3>
+		<mat-divider [vertical]="true" class="devider"></mat-divider>
+			<h3 class="column"> {{user.firstName}}</h3>
+			<mat-divider [vertical]="true" class="devider"></mat-divider>
+			<h3 class="column"> {{user.lastName}}</h3>
+		</a>
+	</mat-nav-list>
+</div> -->
+
+<cdk-virtual-scroll-viewport #scroller itemSize="72" class="content">
+<mat-nav-list>
+	<ng-container *cdkVirtualFor="let user of users">
+	<mat-list-item>
+		<a [routerLink]="[user.id]" class='list-item'>
+		<h3 matLine>login: {{user.login}} </h3>
+		<p matLine>
+			<span> {{user.email}} </span>
+		</p>
+		<mat-divider></mat-divider>
+		</a>
+	</mat-list-item>
+	</ng-container>
+<div class="spinner-item"  *ngIf="loading">
+	<mat-progress-spinner [mode]="'indeterminate'" [diameter]="50">
+	</mat-progress-spinner>
+</div>
+</mat-nav-list>
+</cdk-virtual-scroll-viewport>
+
+<router-outlet></router-outlet>

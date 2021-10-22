@@ -1,0 +1,43 @@
+.user-list {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: '100px';
+	width: 40%;
+	justify-content: space-between;
+}
+/* 
+.table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 100px;
+} */
+
+.content {
+	height: 30vh;
+	overflow: auto;
+}
+
+.list-item {
+	/* display: flex;
+	justify-content: space-around;
+	align-content: space-between;
+	width: 100%;
+	border: 1px solid black; */
+	width: 100%;
+}
+.devider {
+	width: 1px;
+	background-color: black;
+}
+.column {
+	width: 30%;
+	text-align: center;
+}
+
+.spinner-item {
+	display: grid;
+	place-items: center;
+	margin-top: 10px;
+}

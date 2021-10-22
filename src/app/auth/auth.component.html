@@ -2,9 +2,9 @@
     <div class="form-container">
       <h1>Login</h1>
       <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form">
-      <mat-form-field appearance="fill" class = "form-input">
+      <mat-form-field appearance="fill" class = "form-input" >
         <mat-label>Login</mat-label>
-        <input matInput>
+        <input matInput formControlName="login">
       </mat-form-field>
       <mat-form-field appearance="fill" class = "form-input">
         <mat-label>Password</mat-label>
@@ -12,6 +12,7 @@
         <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
+        <mat-error *ngIf='errorMessage'>{{errorMessage}}</mat-error>
       </mat-form-field>
     <div>
       <button class="submit">Login</button>
